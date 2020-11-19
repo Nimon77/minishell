@@ -6,7 +6,7 @@
 /*   By: nsimon <nsimon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 16:59:40 by nsimon            #+#    #+#             */
-/*   Updated: 2020/11/19 16:46:25 by nsimon           ###   ########.fr       */
+/*   Updated: 2020/11/19 17:09:51 by nsimon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,8 @@ void	find_exec(t_exec *exec, char **path)
 	char *tmp;
 	
 	i = 0;
+	if (!ft_strncmp(exec->name, "/", 1) || !ft_strncmp(exec->name, "./", 2))
+		return;
 	while (path[i])
 	{
 		tmp = ft_strjoin(path[i], "/");
